@@ -1,0 +1,8 @@
+file = open("EXP_15.txt.txt", "r")
+while True:
+    data = file.readline(2)
+    if not data:
+        break
+    print(data, end="")
+
+file.close()

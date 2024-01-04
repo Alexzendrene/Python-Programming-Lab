@@ -1,0 +1,52 @@
+import random
+
+stone = """         
+                  -----
+                ----------
+                  ----- """
+
+paper = """      
+               ----------
+               ----------
+               ----------
+                                    """
+
+scissors = """
+           --   
+            -========
+           --"""
+
+user = int(input("""
+               0 ---> stone
+               1 ---> paper
+               2 ---> scissors
+               Enter your input: 
+               """))
+
+if user == 0:
+    print(stone)
+elif user == 1:
+    print(paper)
+elif user == 2:
+    print(scissors)
+else:
+    print("INVALID INPUT PLEASE SELECT THE CORRECT INPUT")
+
+if user == 0 or user == 1 or user == 2:
+    print("COMPUTER'S TURN")
+    sps = random.randint(0, 2)
+    if sps == 0:
+        print(stone)
+    elif sps == 1:
+        print(paper)
+    else:
+        print(scissors)
+
+    if (user == 0 and sps == 0) or (user == 1 and sps == 1) or (user == 2 and sps == 2):
+        result = "TIE"
+    elif (user == 0 and sps == 1) or (user == 1 and sps == 2) or (user == 2 and sps == 0):
+        result = "COMPUTER WON, USER DEFEATED"
+    else:
+        result = "USER WON, COMPUTER DEFEATED"
+
+    print(result)
